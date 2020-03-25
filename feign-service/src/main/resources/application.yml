@@ -1,0 +1,18 @@
+server:
+  port: 3500
+spring:
+  application:
+    name: feign-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:6060/eureka
+feign:
+  hystrix:
+    enabled: true
+# 熔断器DashBoard: actuator在boot2.0调整后开关web端点的配置，*代表开启所有
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

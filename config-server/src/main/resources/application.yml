@@ -1,0 +1,29 @@
+server:
+  port: 3600
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/keke-nan/spring-cloud.git
+          search-paths: config-repo
+          username: keke-nan
+          password: aptx2421100708
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:3700
+    bus:
+      trace:
+        enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6060/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

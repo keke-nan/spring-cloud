@@ -1,0 +1,17 @@
+server:
+  port: 3100
+spring:
+  application:
+    name: eureka-client
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0  # 全部需要，默认 0.1
+  zipkin:
+    base-url: http://localhost:9411/
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6060/eureka/

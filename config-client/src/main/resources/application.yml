@@ -1,0 +1,18 @@
+server:
+  port: 3660
+spring:
+  application:
+    name: config-client
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:3700
+      bus:
+        trace:
+          enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh

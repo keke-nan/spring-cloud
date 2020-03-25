@@ -1,0 +1,15 @@
+server:
+  port: 3400
+spring:
+  application:
+    name: hystrix-dashboard-turbine
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:6060/eureka
+# ÈÛ¶ÏÆ÷turbine
+turbine:
+  aggregator:
+    cluster-config: default
+  cluster-name-expression: new String("default")
+  app-config: FEIGN-HYSTRIX, FEIGN-SERVICE

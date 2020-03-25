@@ -1,0 +1,9 @@
+server:
+  port: 3300
+spring:
+  application:
+    name: eureka-client-ha
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6060/eureka/

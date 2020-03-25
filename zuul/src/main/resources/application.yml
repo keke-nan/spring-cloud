@@ -1,0 +1,14 @@
+server:
+  port: 3800
+spring:
+  application:
+    name: zuul-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6060/eureka/
+zuul:
+  routes:
+    hello:
+      path: /producer/**
+      serviceid: eureka-client  # 配置路由，当访问路径有 'producer' 或 serviceid 对应的 值，即 'eureka-client' 时，会转发到 eureka-client
